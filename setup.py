@@ -16,8 +16,11 @@ install_requires = ["wagtail"]
 tests_require = ["pytest-django", "wagtail-factories", "pytest"]
 
 # Convert markdown to rst
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
+try:
+    from pypandoc import convert_file
+    long_description = convert_file("README.md", "rst")
+except:  # NOQA
+    long_description = ""
 
 version = ''
 with io.open('wagtail_icon_picker/__init__.py', 'r', encoding='utf8') as fd:
