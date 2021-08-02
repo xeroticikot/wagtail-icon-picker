@@ -1,0 +1,3 @@
+include README.md LICENSE runtests.py
+include wagtail_icon_picker/static/
+prune img*
