@@ -1,0 +1,31 @@
+{% load static %}
+<div class="icon-picker-widget">
+    {% include "django/forms/widgets/text.html" %}
+
+    {% with widget.attrs.id as widget_id %}
+        <span class="icon-picker-widget__icon-input" id="{{ widget_id }}-icon"></span>
+
+    <script>
+        (async () => {
+            const response = await fetch(`{% static 'wagtail_icon_picker/iconsets/bootstrap5.json' %}`)
+            const result = await response.json()
+            const exValue = document.getElementById("{{ widget_id }}").value?document.getElementById("{{ widget_id }}").value.slice(3):'bi-alarm';
+
+            const iconpicker = new Iconpicker(document.querySelector("#{{ widget_id }}"), {
+                icons: result,
+                showSelectedIn: document.querySelector("#{{ widget_id }}-icon"),
+                searchable: true,
+                selectedClass: "selected",
+                containerClass: "my-picker",
+                hideOnSelect: true,
+                fade: true,
+                defaultValue: exValue,
+                valueFormat: val => `bi ${val}`
+            });
+
+            iconpicker.set() // Set as empty
+            iconpicker.set(exValue) // Reset with a value
+        })();
+    </script>
+    {% endwith %}
+</div>
