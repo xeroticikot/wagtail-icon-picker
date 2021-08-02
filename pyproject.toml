@@ -4,5 +4,6 @@ requires = [
     "wheel",
     "wagtail",
     "django",
+    "pypandoc",
 ]
 build-backend = "setuptools.build_meta"
