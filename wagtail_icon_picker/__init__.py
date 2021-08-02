@@ -1,5 +1,5 @@
 __title__ = "wagtail_icon_picker"
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 __build__ = 1
 __author__ = "Mahmud Abdur Rahman"
 __license__ = "MIT"
