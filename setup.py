@@ -16,11 +16,8 @@ install_requires = ["wagtail"]
 tests_require = ["pytest-django", "wagtail-factories", "pytest"]
 
 # Convert markdown to rst
-try:
-    from pypandoc import convert_file
-    long_description = convert_file("README.md", "rst")
-except:  # NOQA
-    long_description = ""
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
 
 version = ''
 with io.open('wagtail_icon_picker/__init__.py', 'r', encoding='utf8') as fd:
@@ -31,11 +28,14 @@ with io.open('wagtail_icon_picker/__init__.py', 'r', encoding='utf8') as fd:
 setup(
     version=version,
     name="wagtail-icon-picker",
-    description="",
+    description="Wagtail CMS icon picker including Bootstrap Icons, Boxicons, Icofont & Font awesome libraries.",
     long_description=long_description,
     author="Mahmud Abdur Rahman",
     author_email="clanlord.ikot@gmail.com",
     url="https://github.com/xeroticikot/wagtail-icon-picker",
+    project_urls={
+        "Bug Tracker": "https://github.com/xeroticikot/wagtail-icon-picker/issues",
+    },
     packages=find_packages(
         exclude=("*.tests", "*.tests.*", "tests.*", "tests", "example*")
     ),
@@ -46,7 +46,7 @@ setup(
     extras_require={"test": tests_require},
     license="MIT",
     classifiers=[
-        "Development Status :: 1 - Beta",
+        "Development Status :: 4 - Beta",
         "Environment :: Web Environment",
         "Framework :: Django",
         "Framework :: Wagtail",
