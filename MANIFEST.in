@@ -1,3 +1,15 @@
 include README.md LICENSE runtests.py
-include wagtail_icon_picker/static
+include wagtail_icon_picker/static/wagtail_icon_picker/css/icon-picker-widget.css
+include wagtail_icon_picker/static/wagtail_icon_picker/iconpicker.js
+include wagtail_icon_picker/static/wagtail_icon_picker/iconsets/bootstrap5.json
+include wagtail_icon_picker/static/wagtail_icon_picker/iconsets/boxicons.json
+include wagtail_icon_picker/static/wagtail_icon_picker/iconsets/fontawesome4.json
+include wagtail_icon_picker/static/wagtail_icon_picker/iconsets/icofont.json
+include wagtail_icon_picker/static/wagtail_icon_picker/icofont/icofont.css
+include wagtail_icon_picker/static/wagtail_icon_picker/icofont/icofont.min.css
+include wagtail_icon_picker/static/wagtail_icon_picker/icofont/fonts/icofont.eot
+include wagtail_icon_picker/static/wagtail_icon_picker/icofont/fonts/icofont.svg
+include wagtail_icon_picker/static/wagtail_icon_picker/icofont/fonts/icofont.ttf
+include wagtail_icon_picker/static/wagtail_icon_picker/icofont/fonts/icofont.woff
+include wagtail_icon_picker/static/wagtail_icon_picker/icofont/fonts/icofont.woff2
 prune img*

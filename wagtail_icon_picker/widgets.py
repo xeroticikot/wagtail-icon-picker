@@ -1,6 +1,6 @@
 from django.forms import widgets, Media
 from django.utils.safestring import mark_safe
-from wagtail.admin.staticfiles import static
+from wagtail.admin.versioned_staticfiles import versioned_static
 
 
 class BootstrapIconsInputWidget(widgets.TextInput):
@@ -8,11 +8,11 @@ class BootstrapIconsInputWidget(widgets.TextInput):
         css = {
             "all": (
                 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css',
-                static("wagtail_icon_picker/css/icon-picker-widget.css"),
+                versioned_static("wagtail_icon_picker/css/icon-picker-widget.css"),
             )
         }
 
-        js = static("wagtail_icon_picker/iconpicker.js",)
+        js = versioned_static("wagtail_icon_picker/iconpicker.js",)
 
     def render(self, name, value, attrs=None, renderer=None):
         out = super().render(name, value, attrs, renderer=renderer)
@@ -44,7 +44,7 @@ class BootstrapIconsInputWidget(widgets.TextInput):
             })();
             </script>
             """.replace(
-                "__ICONS_JSON__", static("wagtail_icon_picker/iconsets/bootstrap5.json",)
+                "__ICONS_JSON__", versioned_static("wagtail_icon_picker/iconsets/bootstrap5.json",)
             )
         )
 
@@ -67,10 +67,10 @@ class BootstrapIconPickerWidget(widgets.TextInput):
                 "all": [
                     'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css',
                     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
-                    static("wagtail_icon_picker/css/icon-picker-widget.css"),
+                    versioned_static("wagtail_icon_picker/css/icon-picker-widget.css"),
                 ]
             },
-            js=[static("wagtail_icon_picker/iconpicker.js", )]
+            js=[versioned_static("wagtail_icon_picker/iconpicker.js", )]
         )
 
 
@@ -79,11 +79,11 @@ class FontAwesomeIconsInputWidget(widgets.TextInput):
         css = {
             "all": (
                 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
-                static("wagtail_icon_picker/css/icon-picker-widget.css"),
+                versioned_static("wagtail_icon_picker/css/icon-picker-widget.css"),
             )
         }
 
-        js = static("wagtail_icon_picker/iconpicker.js", )
+        js = versioned_static("wagtail_icon_picker/iconpicker.js", )
 
     def render(self, name, value, attrs=None, renderer=None):
         out = super().render(name, value, attrs, renderer=renderer)
@@ -115,7 +115,7 @@ class FontAwesomeIconsInputWidget(widgets.TextInput):
             })();
             </script>
             """.replace(
-                "__ICONS_JSON__", static("wagtail_icon_picker/iconsets/fontawesome4.json", )
+                "__ICONS_JSON__", versioned_static("wagtail_icon_picker/iconsets/fontawesome4.json", )
             )
         )
 
@@ -137,10 +137,10 @@ class FontAwesomeIconPickerWidget(widgets.TextInput):
             css={
                 "all": [
                     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
-                    static("wagtail_icon_picker/css/icon-picker-widget.css"),
+                    versioned_static("wagtail_icon_picker/css/icon-picker-widget.css"),
                 ]
             },
-            js=[static("wagtail_icon_picker/iconpicker.js", )]
+            js=[versioned_static("wagtail_icon_picker/iconpicker.js", )]
         )
 
 
@@ -149,11 +149,11 @@ class BoxIconsInputWidget(widgets.TextInput):
         css = {
             "all": (
                 'https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css',
-                static("wagtail_icon_picker/css/icon-picker-widget.css"),
+                versioned_static("wagtail_icon_picker/css/icon-picker-widget.css"),
             )
         }
 
-        js = static("wagtail_icon_picker/iconpicker.js", )
+        js = versioned_static("wagtail_icon_picker/iconpicker.js", )
 
     def render(self, name, value, attrs=None, renderer=None):
         out = super().render(name, value, attrs, renderer=renderer)
@@ -185,7 +185,7 @@ class BoxIconsInputWidget(widgets.TextInput):
             })();
             </script>
             """.replace(
-                "__ICONS_JSON__", static("wagtail_icon_picker/iconsets/boxicons.json", )
+                "__ICONS_JSON__", versioned_static("wagtail_icon_picker/iconsets/boxicons.json", )
             )
         )
 
@@ -207,10 +207,10 @@ class BoxIconPickerWidget(widgets.TextInput):
             css={
                 "all": [
                     'https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css',
-                    static("wagtail_icon_picker/css/icon-picker-widget.css"),
+                    versioned_static("wagtail_icon_picker/css/icon-picker-widget.css"),
                 ]
             },
-            js=[static("wagtail_icon_picker/iconpicker.js", )]
+            js=[versioned_static("wagtail_icon_picker/iconpicker.js", )]
         )
 
 
@@ -218,12 +218,12 @@ class IcofontInputWidget(widgets.TextInput):
     class Media:
         css = {
             "all": (
-                static("wagtail_icon_picker/css/icofont/icofont.min.css"),
-                static("wagtail_icon_picker/css/icon-picker-widget.css"),
+                versioned_static("wagtail_icon_picker/css/icofont/icofont.min.css"),
+                versioned_static("wagtail_icon_picker/css/icon-picker-widget.css"),
             )
         }
 
-        js = static("wagtail_icon_picker/iconpicker.js", )
+        js = versioned_static("wagtail_icon_picker/iconpicker.js", )
 
     def render(self, name, value, attrs=None, renderer=None):
         out = super().render(name, value, attrs, renderer=renderer)
@@ -255,7 +255,7 @@ class IcofontInputWidget(widgets.TextInput):
             })();
             </script>
             """.replace(
-                "__ICONS_JSON__", static("wagtail_icon_picker/iconsets/icofont.json", )
+                "__ICONS_JSON__", versioned_static("wagtail_icon_picker/iconsets/icofont.json", )
             )
         )
 
@@ -276,9 +276,9 @@ class IcofontPickerWidget(widgets.TextInput):
         return Media(
             css={
                 "all": [
-                    static("wagtail_icon_picker/css/icofont/icofont.min.css"),
-                    static("wagtail_icon_picker/css/icon-picker-widget.css"),
+                    versioned_static("wagtail_icon_picker/css/icofont/icofont.min.css"),
+                    versioned_static("wagtail_icon_picker/css/icon-picker-widget.css"),
                 ]
             },
-            js=[static("wagtail_icon_picker/iconpicker.js", )]
+            js=[versioned_static("wagtail_icon_picker/iconpicker.js", )]
         )
