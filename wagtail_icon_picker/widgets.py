@@ -1,6 +1,6 @@
 from django.forms import widgets, Media
 from django.utils.safestring import mark_safe
-from wagtail.admin.versioned_staticfiles import versioned_static
+from wagtail.admin.staticfiles import versioned_static
 
 
 class BootstrapIconsInputWidget(widgets.TextInput):
